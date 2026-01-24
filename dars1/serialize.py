@@ -10,6 +10,8 @@ class SchoolSerializer(ModelSerializer):
 
 
 class StudentSerializer(ModelSerializer):
+    school = SchoolSerializer(read_only=True)
+
     class Meta:
         failed = '__all__'
         model = School
